@@ -7,10 +7,11 @@ from wtforms.validators import DataRequired, Length, EqualTo
 from sqlalchemy import Table
 import random
 import string
+import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SECRET_KEY'] = os.urandom(24)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:yash152@localhost/book_exchange'
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
