@@ -33,6 +33,7 @@ class Book(db.Model):
     available = db.Column(db.Boolean, default=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
+
     def __repr__(self):
         return f"Book('{self.id}', '{self.title}', '{self.author}')"
 
