@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}My Books{% endblock %}
+
+{% block content %}
+<h1>My Books</h1>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <p>{{ form.title.label }} {{ form.title() }}</p>
+    <p>{{ form.author.label }} {{ form.author() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+<ul>
+    {% for book in books %}
+    <li>ID: {{ book.id }} - {{ book.title }} by {{ book.author }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

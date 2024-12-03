@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to the Book Exchange, {{ current_user.username }}!</h1>
+<nav>
+    <a href="{{ url_for('profile') }}">Profile</a>
+    <a href="{{ url_for('books') }}">My Books</a>
+    <a href="{{ url_for('available_books') }}">Available Books</a>
+    <a href="{{ url_for('exchange') }}">Propose Exchange</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</nav>
+{% endblock %}
